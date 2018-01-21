@@ -7,6 +7,7 @@
 - [4. pdf](#4-pdf)
 - [5. 添加图片](#5-添加图片)
 - [6. 表格](#6-表格)
+- [Task List](#task-list)
 
 <!-- /TOC -->
 
@@ -61,4 +62,8 @@ C-->D;
 |---------|-----------------------|--------|
 |item 1  | 1. one 2. two 3. three | 你好|
 
-#
+# Task List
+- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
+- [x] list syntax required (any unordered or ordered list supported)
+- [x] this is a complete item
+- [ ] this is an incomplete item
