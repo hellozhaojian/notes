@@ -1,21 +1,93 @@
-# math
+<center>MARKDOWN基本介绍</center>
+<!-- TOC -->
 
-* 参考[markdown中插入数学公式](http://blog.csdn.net/xiahouzuoxin/article/details/26478179)
-* 详细介绍MathJax
+- [1. math](#1-math)
+- [2. graphic](#2-graphic)
 
+<!-- /TOC -->
+
+# 1. math
+
+* 在vscode中安装Markdown+Math
+* 参考[LaTeX Math Symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
+1. 行间的公式
+
+$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}                 $$      (1)
+2. 行内公式 $x=\frac{x}{y}$
+3. 另外一个行内 $x^2+y^2=z \ngeq 4$
+
+
+# 2. graphic
+1. brew install graphviz
+ 
+2. 基本的图形 
+
+```plantuml
+@startuml
+
+start
+
+if (Graphviz installed?) then (yes)
+  :process all\ndiagrams;
+else (no)
+  :process only
+  __sequence__ and __activity__ diagrams;
+endif
+
+stop
+
+@enduml
 ```
-    在下面的标签中插入数学公式
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+3. 流程图
+```flow
+```flow
+st=>start: Start:>http://www.google.com[blank]
+e=>end:>http://www.google.com
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: Yes
+or No?:>http://www.google.com
+io=>inputoutput: catch something...
+
+st->op1->cond
+cond(yes)->io->e
+cond(no)->sub1(right)->op1
+``
 ```
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
- tex2jax: {inlineMath: [['$','$'], ['\(','\)']]}
-});
-</script>
-<script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+4. 时序图
+```mermaid
+graph TD;
+A-->B;
+A-->C;
+B-->D;
+C-->D;
+```
 
-$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
-\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
+
+# 3. 添加目录
+
+1. 参考[Markdown TOC](https://www.jianshu.com/p/4721ddd27027)
+2. 安装好插件后，Control + 左键 -> 选择 MarkDown TOC Insert/Update[ˆM T] 即可
+3. 点击右侧的预览功能查查
+
+# 4. pdf
+
+1. Use the Markdown: Clip Markdown+Math to Html command or the key binding ('ctrl+K .'). 此时，html源码放置在剪贴板中，需要手动将数据粘贴到一个html文件，如tmp.html
+2. brew install pandoc
+3. 安装[maxtex](http://www.tug.org/mactex/mactex-download.html)
+4. 查看mac支持的字体 system_profiler SPFontsDataType > /tmp/z.fond
+5. pandoc tmp.html -o tmp.pdf --pdf-engine=xelatex -V CJKmainfont="STKaiti"
+
+# 5. 添加图片
+<img  src="/Users/alchemy_taotaox/Desktop/mygithub/profile/gru-image.jpg"/><br/>
+
+
+# 6. 表格
+
+|Header1 | Header2                | Header3|
+|---------|-----------------------|--------|
+|item 1  | 1. one 2. two 3. three | 你好|
+
+#
