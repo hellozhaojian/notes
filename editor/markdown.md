@@ -3,6 +3,10 @@
 
 - [1. math](#1-math)
 - [2. graphic](#2-graphic)
+- [3. 添加目录](#3-添加目录)
+- [4. pdf](#4-pdf)
+- [5. 添加图片](#5-添加图片)
+- [6. 表格](#6-表格)
 
 <!-- /TOC -->
 
@@ -22,39 +26,6 @@ $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}                 $$      (1)
  
 2. 基本的图形 
 
-```plantuml
-@startuml
-
-start
-
-if (Graphviz installed?) then (yes)
-  :process all\ndiagrams;
-else (no)
-  :process only
-  __sequence__ and __activity__ diagrams;
-endif
-
-stop
-
-@enduml
-```
-
-3. 流程图
-```flow
-```flow
-st=>start: Start:>http://www.google.com[blank]
-e=>end:>http://www.google.com
-op1=>operation: My Operation
-sub1=>subroutine: My Subroutine
-cond=>condition: Yes
-or No?:>http://www.google.com
-io=>inputoutput: catch something...
-
-st->op1->cond
-cond(yes)->io->e
-cond(no)->sub1(right)->op1
-``
-```
 
 4. 时序图
 ```mermaid
